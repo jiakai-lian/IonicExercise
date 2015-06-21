@@ -35,7 +35,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('TodoDetailCtrl',function($scope, $stateParams, Todos) {
-   $scope.todo = Chats.get($stateParams.todoId);
+   $scope.todo = Todos.get($stateParams.todoId);
 
 })
 ;
