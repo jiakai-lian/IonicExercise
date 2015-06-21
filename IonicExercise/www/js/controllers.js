@@ -25,4 +25,17 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
-});
+})
+
+.controller('TodosCtrl', function($scope,Todos) {
+  $scope.todos = Todos.all();
+     $scope.remove = function(todo) {
+         Todos.remove(todo);
+       }
+})
+
+.controller('TodoDetailCtrl',function($scope, $stateParams, Todos) {
+   $scope.todo = Chats.get($stateParams.todoId);
+
+})
+;

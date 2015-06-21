@@ -1,0 +1,21 @@
+<ion-nav-bar class='bar-positive'>
+<ion-nav-back-button class="button-clear">
+<i class="ion-arrow-left-c"></i> Back
+</ion-nav-back-button>
+</ion-nav-bar>
+<ion-nav-view animation="slide-left-right"></ion-nav-view>
+
+
+<ion-view view-title="{{todo.name}}">
+    <ion-content class="padding">
+        <img src="img/ionic.png"/>
+        <p>
+            {{todo.name}}
+        </p>
+        <ion-list>
+            <ion-toggle  ng-model="todo.done">
+                Status
+            </ion-toggle>
+        </ion-list>
+    </ion-content>
+</ion-view>

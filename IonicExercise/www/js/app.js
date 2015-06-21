@@ -75,7 +75,27 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'AccountCtrl'
       }
     }
-  });
+  })
+
+     .state('tab.todos', {
+           url: '/todos',
+           views: {
+             'tab-todos': {
+               templateUrl: 'templates/tab-todos.html',
+               controller: 'TodosCtrl'
+             }
+           }
+         })
+
+      .state('tab.todo-detail', {
+            url: '/todos/:todoId',
+            views: {
+              'tab-todos': {
+                templateUrl: 'templates/todo-detail.html',
+                controller: 'TodoDetailCtrl'
+              }
+            }
+          });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');

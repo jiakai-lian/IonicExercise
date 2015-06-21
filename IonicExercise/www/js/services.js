@@ -47,4 +47,37 @@ angular.module('starter.services', [])
       return null;
     }
   };
-});
+})
+.factory("Todos", function() {
+
+var todos = [
+                  {
+                    id: '1',
+                    name: 'Pick up apples',
+                    done: false
+                  },
+                  {
+                    id: '2',
+                    name: 'Mow the lawn',
+                    done: true
+                  }
+                ];
+
+                return {
+                    all: function() {
+                      return todos;
+                    },
+                    remove: function(todo) {
+                      todos.splice(todos.indexOf(todo), 1);
+                    },
+                    get: function(todoId) {
+                      for (var i = 0; i < todos.length; i++) {
+                        if (todos[i].id === parseInt(todoId)) {
+                          return todos[i];
+                        }
+                      }
+                      return null;
+                    }
+                  };
+})
+;
