@@ -48,16 +48,17 @@ angular.module('starter.services', [])
     }
   };
 })
+
 .factory("Todos", function() {
 
 var todos = [
                   {
-                    id: '1',
+                    id: 1,
                     name: 'Pick up apples',
                     done: false
                   },
                   {
-                    id: '2',
+                    id: 2,
                     name: 'Mow the lawn',
                     done: true
                   }
@@ -71,13 +72,21 @@ var todos = [
                       todos.splice(todos.indexOf(todo), 1);
                     },
                     get: function(todoId) {
-                      for (var i = 0; i < todos.length; i++) {
-                        if (todos[i].id === parseInt(todoId)) {
-                          return todos[i];
+                          for (var i = 0; i < todos.length; i++) {
+                            if (todos[i].id === parseInt(todoId)) {
+                              return todos[i];
+                            }
+                          }
+                          return null;
+                        },
+                        getByIndex:function(index)
+                        {
+                          if(index<todos.length)
+                          {
+                          return todos[index];
+                          }
+                          return null;
                         }
-                      }
-                      return null;
-                    }
                   };
 })
 ;

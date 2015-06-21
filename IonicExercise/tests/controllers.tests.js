@@ -14,3 +14,5 @@ describe('Controllers', function(){
         expect(scope.settings.enableFriends).toEqual(true);
     });
 });
+
+
